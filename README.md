@@ -71,4 +71,4 @@ The table does answer the following questions:
 -	What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
 
 ### Summary: 
-There is no bias found for the jewelry reviews in the Vine program towards members. In the table above we can see the percents between total number of reviews and total number of five star views have similar percents. We could further evaluate the reviews by checking the reviews with only one start. (A member may be more likely to give a bad review.)
+There is no bias found for the jewelry reviews in the Vine program towards members. In the table above we can see the percents between total number of reviews and total number of five star views have similar percents. We could further evaluate the reviews by checking the reviews with only one star. (A member may be more likely to give a bad review.)
