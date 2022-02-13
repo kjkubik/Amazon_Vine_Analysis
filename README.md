@@ -2,7 +2,10 @@
 Analysis of Amazon reviews written by members and non-member of the paid Amazon Vine program
 
 ## Overview/Purpose:  
-This analysis is to determine if there is any bias toward favorable reviews from Vine members in Amazon reviews. I chose to work with the jewelry review (https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Jewelry_v1_00.tsv.gz) found at https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt.
+This analysis is to determine if there is any bias toward favorable reviews from Vine members in Amazon reviews. I chose to work with the jewelry review data at:
+  (https://s3.amazonaws.com/amazon-reviews-pds/tsv/amazon_reviews_us_Jewelry_v1_00.tsv.gz) 
+
+Note: All reviews are at https://s3.amazonaws.com/amazon-reviews-pds/tsv/index.txt.
 
 ## ETL steps followed:  
 #### 1)	Create AWS RDS:
