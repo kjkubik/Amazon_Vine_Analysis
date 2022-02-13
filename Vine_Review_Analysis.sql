@@ -113,17 +113,9 @@ SELECT * FROM vine_table_half_helpful
 WHERE vine = 'N';
 
 
+drop table vine_results;
+
 -- Create table containing results:
--- 1) total number of reviews (that are found 'helpful' and having more than 20 votes)
--- 2) 
--- 3) count records in vine_paid (out of five star reviews, how many are 'paid')
--- 4) count records in vine_not_paid (out of five star reviews, how many are 'not paid')
--- 5) what % are paid and what % are not paid
--- 5) % paid (count(paid)/count(all five stars))
--- 6) % not paid (count(not paid)/count(all five stars))
-
-drop table vine_results; 
-
 CREATE TABLE vine_results (
   review_id TEXT PRIMARY KEY,                  -- we are just going to put 'review results' HOWEVER this could be done better
   total_reviews FLOAT, 		                   -- total number of reviews ('helpful' and >= 20 votes)
@@ -144,42 +136,52 @@ total_five_star_reviews_vine_paid,total_five_star_reviews_vine_not_paid,percent_
 percent_reviews_not_paid,percent_paid_five_star,percent_not_paid_five_star)
 VALUES ('review results',0,0,0,0,0,0,0,0,0,0);
 
+-- count total reviews
 UPDATE vine_results 
 SET total_reviews = (SELECT COUNT(*) from vine_table_half_helpful)
 where review_id = 'review results';
 
+-- count total five start reviews
 UPDATE vine_results 
 SET total_five_star_reviews = (SELECT COUNT(*) from vine_table_half_helpful where star_rating = 5)
 where review_id = 'review results';
 
+-- count total reviews from members 
 UPDATE vine_results 
 SET total_reviews_vine_paid = (SELECT COUNT(*) from vine_table_half_helpful where vine = 'Y')
 where review_id = 'review results';
 
+-- count total reviews from non-members 
 UPDATE vine_results 
 SET total_reviews_vine_not_paid = (SELECT COUNT(*) from vine_table_half_helpful where vine = 'N')
 where review_id = 'review results';
 
+-- count total 'five star' reviews from members 
 UPDATE vine_results 
 SET total_five_star_reviews_vine_paid = (SELECT COUNT(*) from vine_table_half_helpful where star_rating = 5 and vine = 'Y')
 where review_id = 'review results';
 
+-- count total 'five star' reviews from non-members 
 UPDATE vine_results 
 SET total_five_star_reviews_vine_not_paid = (SELECT COUNT(*) from vine_table_half_helpful where star_rating = 5 and vine = 'N')
 where review_id = 'review results';
 
+-- percent of members reviewing jewelry
 UPDATE vine_results 
 SET percent_reviews_paid = (SELECT ((total_reviews_vine_paid/total_reviews) * 100) FROM vine_results 
 					WHERE review_id = 'review results');
 
+-- percent of non-members reviewing jewelry
 UPDATE vine_results 
 SET percent_reviews_not_paid = (SELECT ((total_reviews_vine_not_paid/total_reviews) * 100) FROM vine_results 
 					WHERE review_id = 'review results');
 
+-- percent of members giving a '5 star' review for jewelry
 UPDATE vine_results 
 SET percent_paid_five_star = (SELECT ((total_five_star_reviews_vine_paid/total_five_star_reviews) * 100) FROM vine_results 
 					WHERE review_id = 'review results');
 
+-- percent of non-members giving a '5 star' review for jewelry
 UPDATE vine_results 
 SET percent_not_paid_five_star = (SELECT ((total_five_star_reviews_vine_not_paid/total_five_star_reviews) * 100) FROM vine_results 
 					WHERE review_id = 'review results');
