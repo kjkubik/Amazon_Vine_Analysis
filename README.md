@@ -63,9 +63,11 @@ Here is the results table)
 
 ![](SnapShots/RESULTSTable.png)
 
-1. Results: Using bulleted lists and images of DataFrames as support, address the following questions:
-    o	How many Vine reviews and non-Vine reviews were there?
-    o	How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
-    o	What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
-2. Summary: In your summary, state if there is any positivity bias for reviews in the Vine program. Use the results of your analysis to support your statement. Then, provide one additional analysis that you could do with the dataset to support your statement.
 
+The table does answer the following questions: 
+
+-	How many Vine reviews and non-Vine reviews were there?
+-	How many Vine reviews were 5 stars? How many non-Vine reviews were 5 stars?
+-	What percentage of Vine reviews were 5 stars? What percentage of non-Vine reviews were 5 stars?
+
+### Summary: There is no bias found for the jewelry reviews in the Vine program towards members. In the table above we can see the percents between total number of reviews and total number of five star views have similar percents. We could further evaluate the reviews by checking the reviews with only one start. (A member may be more likely to give a bad review.)
