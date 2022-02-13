@@ -6,49 +6,45 @@ I chose to work with the jewelry review (https://s3.amazonaws.com/amazon-reviews
 
 ## ETL steps followed:  
 1)	Create AWS RDS. 
-AWS_RDS_Creation_Tier_Charge.png
+![](SnapShots/AWS_RDS_Creation_Tier_Charge.png)
 #### RDS Endpoint:
 AWS_RDS_Endpoint_for_PostgreSQL.png
 
 
 2)	Create PostgreSQL Server (using AWS endpoint): 
-Adding_Endpoint_to_PostgreSQL.png
+![](SnapShots/Adding_Endpoint_to_PostgreSQL.png)
 
 3)	Create tables in PostgreSQL:
-Creating_Tables.png
+![](SnapShots/Creating_Tables.png)
 
 4)	Run ETL steps (Amazon_Reviews_ETL.ipynb) to load the tables
 Here are the records loaded for the vine table: 
-countOfVineTable.png
+![](SnapShots/countOfVineTable.png)
 
 
 5)	Create tables needed to do analysis from vine table
 Here we select only records having total votes greater than or equal to total votes: 
-INSERTINTOtwentyANDover.png
+![](SnapShots/INSERTINTOtwentyANDover.png)
 Here we capture only the votes that were found ‘most helpful’: 
-CREATE_and_INSERT_INTO_Half_Helpful.png
+![](SnapShots/CREATE_and_INSERT_INTO_Half_Helpful.png)
 At this point we get the count of records we will be using to do the anaylsis: 
-countForHalfHelpful.png
+![](SnapShots/countForHalfHelpful.png)
 
 Here are the number of members: 
-MembershipsWithVineProgram.png
+![](SnapShots/MembershipsWithVineProgram.png)
 
 Here are the number of non-members:
-MembershipsWithoutVineProgram.png
+![](SnapShots/MembershipsWithoutVineProgram.png)
 
 The same processing was completed for the ‘five star’ part of analysis.
-
 
 ## Results:  
 I created a table containing all the results. Here is the processing for the results.
 
-ResultProcessing.png
+![](SnapShots/ResultProcessing.png)
 
-
-Here is the results table.
-
-
-RESULTSTable.png
+Here is the results table)
+![](SnapShots/RESULTSTable.png)
 
 
 1.	Results: Using bulleted lists and images of DataFrames as support, address the following questions:
